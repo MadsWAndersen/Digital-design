@@ -66,6 +66,19 @@ onMounted(async () => {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+
+
+
+    &__room-image {
+        @media (max-width: $breakpoint-lg) {
+            width: 100%;
+ 
+        }
+        @media (max-width: $breakpoint-sm) {
+            width: 100%;
+        }
+    }
     
     &__room {
         h2, a {
@@ -89,6 +102,14 @@ onMounted(async () => {
             text-transform: uppercase;
         }
         margin-bottom: 100px;
+
+        @media (max-width: $breakpoint-lg) {
+            width: 48%;
+        }
+
+        @media (max-width: $breakpoint-sm) {
+            width: 100%
+        }
     }
 
     &__room-link {
@@ -99,20 +120,21 @@ onMounted(async () => {
         }
         &:hover {
             &:after {
-                right: -35px;
-                transition: 0.3s ease;
+                @include ArrowCTA-hover;
             }
         }
     }
 
     &__room-list {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-  
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        width: 100%;
+
+        
     }
   }
   

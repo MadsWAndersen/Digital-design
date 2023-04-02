@@ -49,9 +49,6 @@ onMounted(async () => {
 margin: 0 auto;
 text-align: center;
 
-&__title {
-    
-}
 &__heroimage {
     height:600px;
     object-fit: cover;

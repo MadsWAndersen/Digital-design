@@ -3,6 +3,12 @@ $primaryColor: #FFDBC3;
 $secondaryColor: #E94146;
 $defaultMaxWidth: 1200px;
 
+// Define mediabreakpoints
+$breakpoint-sm: 600px;
+$breakpoint-md: 850px;
+$breakpoint-lg: 1038px;
+
+
 // Define a mixin for creating overlay
 @mixin Overlay {
   content: "";
@@ -35,9 +41,9 @@ $defaultMaxWidth: 1200px;
 
 // Define styles for the main container
 #app {
-  font-family: "Syne"; // Set font family
-  background: $primaryColor; // Set background color
-}
+  font-family: "Syne"; 
+  background: $primaryColor; 
+} 
 
 // Define styles for the body
 body {
@@ -53,6 +59,12 @@ a {
   letter-spacing: 1.3px;
 }
 
+section {
+  @media (max-width: $breakpoint-lg) {
+    padding: 0px 20px;
+  }
+}
+
 h1 {
   font-family: 'Syne';
   font-style: normal;
@@ -60,6 +72,10 @@ h1 {
   font-size: 110px;
   line-height: 110px;
   letter-spacing: 1px;
+  @media (max-width: $breakpoint-lg) {
+    font-size: 30px;
+    line-height: unset;
+  }
 }
 
 h2 {

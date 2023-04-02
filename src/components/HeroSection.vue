@@ -26,13 +26,13 @@ const props = defineProps({
 </script>
 
 <template>
-    <section class="hero-section">
+    <div class="hero-section">
         <img class="hero-section__image" :src="imageSrc" :alt="imageAlt" />
         <div class="hero-section__content">
             <h1 class="hero-section__heading">{{ heading }}</h1>
             <a class="hero-section__cta" :href="link" >{{ ctaText }}</a>
         </div>
-    </section>
+    </div>
 </template>
 
 
@@ -44,6 +44,10 @@ const props = defineProps({
     max-height: 865px;
     position: relative;
     height: 100%;
+    @media (max-width: $breakpoint-md) {
+      height: 500px;
+    }
+
     &__image {
         width: 100%;
         height: 100%;
@@ -64,12 +68,26 @@ const props = defineProps({
         flex-direction: column;
         align-items: start;
         justify-content: center;
+
+        @media (max-width: $breakpoint-md) {
+            max-width: 768px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        @media (max-width: $breakpoint-sm) {
+            max-width: 576px;
+        }
     }
     
     &__heading {
         color: #fff;
         text-align: left;
         max-width: 729px;
+
+        @media (max-width: $breakpoint-md) {
+            max-width: 100%;
+        }
     }
     
     &__cta {
@@ -86,6 +104,10 @@ const props = defineProps({
         text-align: center;
         letter-spacing: 1.5px;
         text-transform: uppercase;
+
+        @media (max-width: $breakpoint-sm) {
+            padding: 15px 40px;
+        }
     }
-  }
-  </style>
+}
+</style>

@@ -48,6 +48,10 @@
     padding: 0;
     display: flex;
     padding: 150px 0px;
+    @media (max-width: $breakpoint-lg) {
+      flex-direction: column;
+      padding: 50px 20px;
+    }
 
     &__left {
       display: flex;
@@ -62,19 +66,16 @@
       a {
         font-family: 'Montserrat';
         position: relative;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 17px;
-        text-align: left;
-        margin-top: 40px;
-        letter-spacing: 1.3px;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: $secondaryColor;
         float: left;
         display: flex;
         width: fit-content;
+        font-style: normal;
+        font-weight: 700;
+        margin-top: 40px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $secondaryColor;
+     
         &:after {
           @include ArrowCTA;
         }

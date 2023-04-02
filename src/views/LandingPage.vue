@@ -66,10 +66,6 @@ onMounted(async () => {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
-
-
-
     &__room-image {
         @media (max-width: $breakpoint-lg) {
             width: 100%;

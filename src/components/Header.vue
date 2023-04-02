@@ -3,6 +3,7 @@ import {ref, onUnmounted, onMounted} from 'vue';
 
 const isScrolled = ref(false);
 
+
 const handleScroll = () => {
     const scrollPosition = window.scrollY;
     isScrolled.value = scrollPosition > 0

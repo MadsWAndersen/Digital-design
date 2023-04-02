@@ -47,6 +47,7 @@ const props = defineProps({
     &__image {
         width: 100%;
         height: 100%;
+        max-height: 865px;
         object-fit: cover;
     }
     
@@ -75,7 +76,10 @@ const props = defineProps({
         background: $secondaryColor;
         text-decoration: none;
         color: #fff;
-        padding: 23.5px 50px;
+        padding: 23.5px 76px;
+        &:hover {
+        
+        }
     }
   }
   </style>

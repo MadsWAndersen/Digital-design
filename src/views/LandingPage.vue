@@ -3,7 +3,6 @@ import { ref, onMounted } from 'vue';
 import Header from '/src/components/Header.vue'
 import HeroSection from '/src/components/HeroSection.vue'
 
-
 const rooms = ref([]);
 
 onMounted(async () => {
@@ -14,6 +13,7 @@ onMounted(async () => {
 
 
 </script>
+
 <template>
     <Header/>
     <HeroSection
@@ -37,7 +37,6 @@ onMounted(async () => {
     </section>
 </template>
 <style lang="scss" scoped>
-
 @import "/src/assets/main.scss";
 
 .hotel {
@@ -51,7 +50,21 @@ onMounted(async () => {
         h2, a {
             text-align: left;
             display: flex;
+            color: $secondaryColor;
+            text-decoration: none;
         }
+
+        a {
+            font-family: 'Manrope';
+            font-style: normal;
+            font-weight: 800;
+            font-size: 14px;
+            line-height: 19px;
+            letter-spacing: 1.3px;
+            text-transform: uppercase;
+        }
+
+        margin-bottom: 100px;
     }
 
     &__room-list {

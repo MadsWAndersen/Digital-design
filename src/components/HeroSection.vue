@@ -26,13 +26,13 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="hero-section">
+    <section class="hero-section">
         <img class="hero-section__image" :src="imageSrc" :alt="imageAlt" />
         <div class="hero-section__content">
             <h1 class="hero-section__heading">{{ heading }}</h1>
             <a class="hero-section__cta" :href="link" >{{ ctaText }}</a>
         </div>
-    </div>
+    </section>
 </template>
 
 

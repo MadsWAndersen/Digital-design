@@ -1,0 +1,48 @@
+* {
+  font-family: "Syne";
+}
+
+body {
+  margin: auto;
+}
+
+
+$primaryColor: #FFDBC3;
+$secondaryColor: #E94146;
+$defaultMaxWidth: 1200px;
+
+h1 {
+font-family: 'Syne';
+font-style: normal;
+font-weight: 700;
+font-size: 110px;
+line-height: 110px;
+letter-spacing: 1px;
+}
+
+h2 {
+font-family: 'Syne';
+font-style: normal;
+font-weight: 400;
+font-size: 36px;
+line-height: 40px;
+letter-spacing: 0.318182px;
+}
+
+#app {
+  background: $primaryColor;
+}
+
+
+
+@mixin Overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: #FFF;
+  background: rgba(0, 0, 0, .4);
+}

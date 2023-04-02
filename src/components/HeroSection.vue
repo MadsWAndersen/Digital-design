@@ -1,0 +1,81 @@
+<script setup>
+import { defineProps } from 'vue'
+
+const props = defineProps({
+  imageSrc: {
+    type: String,
+    required: true
+  },
+  imageAlt: {
+    type: String,
+    required: true
+  },
+  heading: {
+    type: String,
+    required: true
+  },
+  ctaText: {
+    type: String,
+    required: true
+  },
+  href: {
+    type: String,
+    required: true
+  }
+})
+</script>
+
+<template>
+    <div class="hero-section">
+        <img class="hero-section__image" :src="imageSrc" :alt="imageAlt" />
+        <div class="hero-section__content">
+            <h1 class="hero-section__heading">{{ heading }}</h1>
+            <a class="hero-section__cta" :href="href" >{{ ctaText }}</a>
+        </div>
+    </div>
+</template>
+
+
+<style lang="scss">
+@import "/src/assets/main.scss";
+
+
+.hero-section {
+    max-height: 865px;
+    position: relative;
+    height: 100%;
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    &__content {
+        position: absolute;
+        max-width: 1050px;
+        top: 50%;
+        transform: translateY(-50%);
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+    }
+    
+    &__heading {
+        color: #fff;
+        text-align: left;
+        max-width: 729px;
+    }
+    
+    &__cta {
+        background: $secondaryColor;
+        text-decoration: none;
+        color: #fff;
+        padding: 23.5px 50px;
+    }
+  }
+  </style>

@@ -2,6 +2,14 @@
 import {ref, onUnmounted, onMounted} from 'vue';
 
 const isScrolled = ref(false);
+const showMenu = ref(false);
+const isActive = ref(false);
+
+function handleMenuClick() {
+  showMenu.value = !showMenu.value;
+  isActive.value = !isActive.value
+}
+
 
 
 const handleScroll = () => {
@@ -22,10 +30,32 @@ onUnmounted(() => {
 </script>
 
 <template>
+
+<div id="menu" :class="{ active: showMenu }">
+    <nav>
+        <ul>
+            <li><a href="#">Forside</a></li>
+            <li><a href="#">Værelser</a></li>
+            <li><a href="#">Om Hotels</a></li>
+            <li><a href="#">Kontakt</a></li>
+            <li><a href="#">Book</a></li>
+        </ul>
+    </nav>
+  </div>
+
+
     <header :class="{'scrolled' : isScrolled}" class="header">
         <div class="header__inner-container">
             <div class="header__logo">
            <h1>alpha hotels</h1> 
+        </div>
+
+        <div class="header__nav--mobile">
+          <div id="menu-icon" :class="{ active: isActive }" @click="handleMenuClick">
+            <span class="menu-icon__line menu-icon__line-left"></span>
+            <span class="menu-icon__line menu-icon__line-center"></span>
+            <span class="menu-icon__line menu-icon__line-right"></span>
+          </div>
         </div>
 
         <nav class="header__nav">
@@ -43,6 +73,10 @@ onUnmounted(() => {
 
 <style lang="scss" scoped>
 @import "/src/assets/main.scss";
+
+#menu {
+    display: none;
+}
 .header {
     display: flex;
     justify-content: space-between;
@@ -62,6 +96,9 @@ onUnmounted(() => {
         }
         
     }
+
+
+    
 
     &__inner-container {
         max-width: $defaultMaxWidth;
@@ -109,4 +146,74 @@ onUnmounted(() => {
         }
     }
 }
+
+
+#menu-icon {
+	z-index: 10;
+	width: 23px;
+	display: flex;
+	flex-direction: column;
+	height: 20px;
+	gap: 7px;
+	position: relative;
+	cursor: pointer;
+
+	&.active {
+		.menu-icon__line {
+			opacity: 0;
+
+			&-left {
+				opacity: 1;
+				display: block;
+				width: 100%;
+				transition: 0.2s ease;
+				top: 50%;
+				transform: rotate(-45deg);
+			}
+
+			&-center {
+				width: 0%;
+				transition: 0.5s ease;
+			}
+
+			&-right {
+				opacity: 1;
+				display: block;
+				width: 100%;
+				transition: 0.2s ease;
+				top: 50%;
+				transform: translateX(0%) rotate(45deg);
+			}
+		}
+	}
+
+	.menu-icon__line {
+		z-index: 3;
+		background-color: white;
+		width: 100%;
+		height: 2px;
+
+		&-center {
+			position: absolute;
+			transform: translateY(-50%);
+			top: 50%;
+			transition: 0.5s ease;
+		}
+
+		&-left {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			transition: 0.2s ease;
+		}
+
+		&-right {
+			top: 0;
+			position: absolute;
+			width: 100%;
+			transition: 0.2s ease;
+		}
+	}
+}
+
 </style>

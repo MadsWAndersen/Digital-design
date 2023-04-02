@@ -57,7 +57,7 @@ onUnmounted(() => {
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         transition: 0.5s ease;
         h1, a {
-            color: #000;
+            color: $secondaryColor;
         }
         
     }

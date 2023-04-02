@@ -18,7 +18,7 @@ const props = defineProps({
     type: String,
     required: true
   },
-  href: {
+  link: {
     type: String,
     required: true
   }
@@ -30,7 +30,7 @@ const props = defineProps({
         <img class="hero-section__image" :src="imageSrc" :alt="imageAlt" />
         <div class="hero-section__content">
             <h1 class="hero-section__heading">{{ heading }}</h1>
-            <a class="hero-section__cta" :href="href" >{{ ctaText }}</a>
+            <a class="hero-section__cta" :href="link" >{{ ctaText }}</a>
         </div>
     </div>
 </template>
@@ -77,9 +77,15 @@ const props = defineProps({
         text-decoration: none;
         color: #fff;
         padding: 23.5px 76px;
-        &:hover {
-        
-        }
+
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 15px;
+        line-height: 20px;
+        text-align: center;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
     }
   }
   </style>
